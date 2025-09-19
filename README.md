@@ -1,0 +1,2 @@
+# panaderia-reposteria-tesing
+Clonacion de proyecto SESASAN para pruebas de calidad de software
