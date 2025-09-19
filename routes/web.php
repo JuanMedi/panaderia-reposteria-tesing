@@ -6,8 +6,16 @@ use App\Http\Controllers\{
     ClienteController,
     PedidoController,
     LoginController,
+    RegisterController
 };
 use Illuminate\Support\Facades\Route;
+
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])
+    ->name('register');
+
+// envío del formulario
+Route::post('/register', [RegisterController::class, 'register'])
+    ->name('register.submit');
 
 Route::get('/', HomeController::class)->name('home');
 

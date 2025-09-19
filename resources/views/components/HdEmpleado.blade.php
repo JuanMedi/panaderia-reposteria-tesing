@@ -18,6 +18,9 @@
             </a>
             <ul class="nav-links">
                 <li>
+                    <a href=" {{ route('dashboard') }} ">Pedidos</a>
+                </li>
+                <li>
                     <a href="{{ route('reposteria') }}">Repostería</a>
                 </li>
                 <li>

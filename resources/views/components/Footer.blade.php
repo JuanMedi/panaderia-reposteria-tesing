@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-content">
-    <img src="{{ asset('images/logoconnegro.png') }}" alt="Logo Zhandra Araujo" class="footer-logo">
-    <p class="footer-text">© 2025 Panadería y repostería Zhandra Araujo.</p>
+    <img src="{{ asset('images/logoconnegro.png') }}" alt="Logo" class="footer-logo">
+    <p class="footer-text">© 2025 Panadería y repostería.</p>
   </div>
 
   <style>

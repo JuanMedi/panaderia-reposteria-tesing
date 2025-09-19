@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
-    <title>Panadería y Repostería - Zhandra Araujo</title>
+    <title>Panadería y Repostería</title>
     <link rel="icon" type="image/png" href="{{ asset('images/logoconnegro.png') }}">
 </head>
 
@@ -15,7 +15,7 @@
 
 <body>
     <img class="fondo-trigo" src="/images/fondotrigo-removebg-preview.png" alt="Fondo de trigo">
-    
+
     <main>
         {{-- El slot es donde se va a cargar el contenido de cada vista --}}
         {{ $slot }}
