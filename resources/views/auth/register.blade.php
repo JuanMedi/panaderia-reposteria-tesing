@@ -97,6 +97,10 @@
     .btn-home:hover {
         background-color: #6d472c;
     }
+
+    .text-danger {
+        color: red;
+    }
 </style>
 
 <a href="{{ route('home') }}" class="btn-home">De vuelta al inicio</a>
@@ -111,22 +115,22 @@
             @csrf
 
             <div class="registro-empleados-group">
-                <label class="registro-empleados-label">Nombre</label>
+                <label class="registro-empleados-label">Nombre <span class="text-danger">*</span></label>
                 <input type="text" name="nombre" class="registro-empleados-input" required>
             </div>
 
             <div class="registro-empleados-group">
-                <label class="registro-empleados-label">Email</label>
+                <label class="registro-empleados-label">Email <span class="text-danger">*</span></label>
                 <input type="email" name="email" class="registro-empleados-input" required>
             </div>
 
             <div class="registro-empleados-group">
-                <label class="registro-empleados-label">Contraseña</label>
+                <label class="registro-empleados-label">Contraseña <span class="text-danger">*</span></label>
                 <input type="password" name="password" class="registro-empleados-input" required>
             </div>
 
             <div class="registro-empleados-group">
-                <label class="registro-empleados-label">Confirmar Contraseña</label>
+                <label class="registro-empleados-label">Confirmar Contraseña <span class="text-danger">*</span></label>
                 <input type="password" name="password_confirmation" class="registro-empleados-input" required>
             </div>
 
