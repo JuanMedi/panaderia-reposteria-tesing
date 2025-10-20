@@ -19,28 +19,61 @@
     <form action="{{ route('pedido.store', $producto) }}" method="POST" class="container">
         @csrf
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" value="{{ old('nombre') }}"
+            required>
+        @error('nombre')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
+        <input type="email" id="email" name="email" placeholder="Ingresa tu email" value="{{ old('email') }}"
+            required>
+        @error('email')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
 
         <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+        <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu teléfono"
+            value="{{ old('telefono') }}" required>
+        @error('telefono')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
 
         <label for="fecha_entrega">Fecha:</label>
-        <input type="date" id="fecha_entrega" name="fecha_entrega" required>
+        <input type="date" id="fecha_entrega" name="fecha_entrega" value="{{ old('fecha_entrega') }}" required>
+        @error('fecha_entrega')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
 
         <label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion" placeholder="Ingresa tu dirección" required>
+        <input type="text" id="direccion" name="direccion" placeholder="Ingresa tu dirección"
+            value="{{ old('direccion') }}" required>
+        @error('direccion')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
 
         <label for="cantidad">Cantidad:</label>
-        <input type="number" id="cantidad" min="1" name="cantidad" placeholder="Ingresa la cantidad" required>
+        <input type="number" id="cantidad" min="1" name="cantidad" placeholder="Ingresa la cantidad"
+            value="{{ old('cantidad', 1) }}" required>
+        @error('cantidad')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
 
         <label for="total">Total:</label>
-        <input type="text" id="total" name="total" readonly>
+        <input type="text" id="total" name="total" value="{{ old('total') }}" readonly>
+        @error('total')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
 
         <input type="hidden" name="producto_id" value="{{ $producto->id }}">
         <input type="hidden" name="precio_unitario" value="{{ $producto->precio }}">
+        @error('producto_id')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+        @error('precio_unitario')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+
 
         <button type="submit">Realizar Pedido</button>
     </form>
@@ -222,52 +255,54 @@
         background-color: #6b3e26;
     }
 
-@media (max-width: 768px) {
-    .header h1,
-    .titulo-producto {
-        font-size: 24px;
+    @media (max-width: 768px) {
+
+        .header h1,
+        .titulo-producto {
+            font-size: 24px;
+        }
+
+        .container {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .img-container img {
+            max-width: 100%;
+        }
+
+        .volver-btn a,
+        .volver a {
+            font-size: 12px;
+            padding: 6px 12px;
+        }
     }
 
-    .container {
-        padding: 20px;
-        margin: 20px;
-    }
+    @media (max-width: 480px) {
 
-    .img-container img {
-        max-width: 100%;
-    }
+        .header,
+        .encabezado-producto {
+            padding: 20px 10px;
+        }
 
-    .volver-btn a,
-    .volver a {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-}
+        .container h2 {
+            font-size: 20px;
+        }
 
-@media (max-width: 480px) {
-    .header,
-    .encabezado-producto {
-        padding: 20px 10px;
-    }
+        .description {
+            font-size: 16px;
+        }
 
-    .container h2 {
-        font-size: 20px;
-    }
+        .price {
+            font-size: 18px;
+        }
 
-    .description {
-        font-size: 16px;
+        form input,
+        form button {
+            font-size: 14px;
+            padding: 10px;
+        }
     }
-
-    .price {
-        font-size: 18px;
-    }
-
-    form input,
-    form button {
-        font-size: 14px;
-        padding: 10px;
-    }
-}
 </style>
 
 <script>

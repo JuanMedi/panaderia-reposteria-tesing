@@ -116,23 +116,38 @@
 
             <div class="registro-empleados-group">
                 <label class="registro-empleados-label">Nombre <span class="text-danger">*</span></label>
-                <input type="text" name="nombre" class="registro-empleados-input" required>
+                <input type="text" name="nombre" class="registro-empleados-input" value="{{ old('nombre') }}"
+                    required>
+                @error('nombre')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="registro-empleados-group">
                 <label class="registro-empleados-label">Email <span class="text-danger">*</span></label>
-                <input type="email" name="email" class="registro-empleados-input" required>
+                <input type="email" name="email" class="registro-empleados-input" value="{{ old('email') }}"
+                    required>
+                @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="registro-empleados-group">
                 <label class="registro-empleados-label">Contraseña <span class="text-danger">*</span></label>
                 <input type="password" name="password" class="registro-empleados-input" required>
+                @error('password')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="registro-empleados-group">
                 <label class="registro-empleados-label">Confirmar Contraseña <span class="text-danger">*</span></label>
                 <input type="password" name="password_confirmation" class="registro-empleados-input" required>
+                @error('password_confirmation')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
+
 
             <div class="registro-empleados-actions">
                 <button type="submit" class="registro-empleados-btn">Registrar</button>
